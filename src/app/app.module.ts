@@ -30,6 +30,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ParkModule } from './park/park.module';
+import { FacilityModule } from './facility/facility.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ParkModule } from './park/park.module';
     ToggleButtonComponent,
     ConfirmComponent,
     ReservationsComponent,
-    BreadcrumbComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -61,7 +62,8 @@ import { ParkModule } from './park/park.module';
 
     ParksModule,
     ParkModule,
-    FacilitiesModule
+    FacilitiesModule,
+    FacilityModule
   ],
   providers: [
     CookieService,
