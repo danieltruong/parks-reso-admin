@@ -25,6 +25,7 @@ export class ModifiersListComponent implements OnInit {
     this.subscriptions.add(
       dataService.watchItem(Constants.dataIds.MODIFIERS).subscribe((res) => {
         this.tableRows = res;
+        console.log(this.tableRows);
       })
     );
   }

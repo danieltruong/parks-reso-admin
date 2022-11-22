@@ -23,6 +23,7 @@ export class ModifierService {
   ) {}
 
   async fetchData(park, facility, date) {
+    console.log('DATEAAAAH', date);
     let dataTag = '';
     let modifierList: any[] = [];
     let errorSubject = 'modifiers';
@@ -75,7 +76,7 @@ export class ModifierService {
     let res;
     try {
       res = await firstValueFrom(this.apiService.put('modifier', obj));
-      const today = this.utils.getTodayAsShortDate();
+      const today = this.utils.getTodaysDate();
       this.fetchData(obj.parkName, obj.facility, today);
       this.toastService.addMessage(
         `Modifier set`,
@@ -113,7 +114,7 @@ export class ModifierService {
     let res;
     try {
       res = await firstValueFrom(this.apiService.put('modifier', obj));
-      const today = this.utils.getTodayAsShortDate();
+      const today = this.utils.getTodaysDate();
       this.fetchData(park, facility, today);
       this.toastService.addMessage(
         `Modifier removed`,
