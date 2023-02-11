@@ -15,7 +15,7 @@ import { Constants } from '../shared/utils/constants';
 describe('ParkService', () => {
   let service: ParkService;
 
-  let mockParkRes = new BehaviorSubject([MockData.mockPark_1]);
+  let mockParkRes = new BehaviorSubject(MockData.mockPark_1);
 
   let mockParksListRes = new BehaviorSubject([
     MockData.mockPark_1,
