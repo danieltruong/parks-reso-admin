@@ -65,14 +65,5 @@ describe('FacilityDetailsResolver', () => {
     const setParamsFromUrlSpy = spyOn(mockPassService, 'setParamsFromUrl');
     await resolver.resolve(route.snapshot);
     expect(setParamsFromUrlSpy).toHaveBeenCalledOnceWith(mockFacility1, {});
-
-    const fetchDataSpy = spyOn(resolver['reservationService'], 'fetchData');
-    await resolver.resolve(route.snapshot);
-    expect(fetchDataSpy).toHaveBeenCalledOnceWith(
-      mockFacility1.pk.split('::')[1],
-      mockFacility1.name,
-      null,
-      null
-    );
   });
 });

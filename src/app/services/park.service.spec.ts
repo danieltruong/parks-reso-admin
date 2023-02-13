@@ -15,7 +15,7 @@ import { Constants } from '../shared/utils/constants';
 describe('ParkService', () => {
   let service: ParkService;
 
-  let mockParkRes = new BehaviorSubject(MockData.mockPark_1);
+  let mockParkRes = new BehaviorSubject([MockData.mockPark_1]);
 
   let mockParksListRes = new BehaviorSubject([
     MockData.mockPark_1,
@@ -27,7 +27,7 @@ describe('ParkService', () => {
     sk: 'MOC1',
     park: {
       name: 'Mock Park 1',
-      orcs: 'MOC1'
+      orcs: 'MOC1',
     },
   };
 
@@ -134,7 +134,7 @@ describe('ParkService', () => {
     expect(apiGetSpy).toHaveBeenCalledOnceWith('park', { park: 'Mock Park 1' });
     expect(setDataSpy).toHaveBeenCalledOnceWith(
       Constants.dataIds.CURRENT_PARK,
-      mockParkRes.value
+      mockParkRes.value[0]
     );
     expect(unloadingSpy).toHaveBeenCalledTimes(1);
   });
